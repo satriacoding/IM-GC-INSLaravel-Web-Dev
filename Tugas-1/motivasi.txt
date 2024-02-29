@@ -1,0 +1,5 @@
+
+Saya mengikuti bootcamp Laravel Web Development karena ingin mendalami kemampuan pengembangan web menggunakan framework Laravel. 
+Saya berharap bootcamp ini akan memberikan pemahaman yang kuat tentang Laravel dan keterampilan praktis untuk membangun aplikasi web yang efisien.
+Setelah bootcamp ini berakhir, saya berharap menjadi seorang pengembang web yang lebih terampil dan percaya diri, 
+dapat bekerja dengan proyek-proyek yang inovatif menggunakan Laravel, dan dapat berkolaborasi dengan baik bersama rekan-rekan sesama peserta bootcamp ini.
