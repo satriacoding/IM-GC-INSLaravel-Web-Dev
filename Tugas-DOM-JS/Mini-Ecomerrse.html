@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>DOM Javascript</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
+  <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js"
+    integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="container">
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand">Mini Ecommerce</a>
+      <form class="form-inline" id="formItem">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" id="keyword" aria-label="Search" />
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="searchItem">
+          Search
+        </button>
+      </form>
+      <button class="btn btn-primary" id="cart">
+        <i class="fas fa-shopping-cart"></i>
+      </button>
+    </nav>
+    <div class="row">
+      <div class="row col-md-12 mt-2" id="listBarang">
+      </div>
+    </div>
+  </div>
+  <script>
+    var items = [
+      ["001", "Oxva Xlim Pro", 60000, "Oxva Xlim Pro Second", "oxva.jpg"],
+      ["002", "Ursa Nano", 300000, "Ursa Nano Blue", "ursa.jpg"],
+      ["003", "Prelovd Liquid", 50000, "Liquid Foom Preloved", "liquid.jpg"],
+      ["004", "Mod Drag", 30000, "Mod Drag Sebulan Pakai", "drag.jpg"],
+    ];
+
+    var listBarang = document.getElementById("listBarang");
+    var formItem = document.getElementById("formItem");
+    var cartButton = document.getElementById("cart");
+    var keywordInput = document.getElementById("keyword");
+
+    // Inisialisasi jumlah barang di keranjang
+    var cartItemCount = 0;
+
+    // Render daftar barang
+    function renderItems(itemsToShow) {
+      listBarang.innerHTML = ""; // Kosongkan listBarang
+      itemsToShow.forEach(function (item) {
+        var cardDiv = document.createElement("div");
+        cardDiv.className = "col-4 mt-2";
+        cardDiv.innerHTML = `
+      <div class="card" style="width: 18rem;">
+        <img src="${item[4]}" class="card-img-top" height="200px" width="200px" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">${item[1]}</h5>
+          <p class="card-text">${item[3]}</p>
+          <p class="card-text">Rp ${item[2]}</p>
+          <a href="#" class="btn btn-primary">Tambahkan ke keranjang</a>
+        </div>
+      </div>
+    `;
+        listBarang.appendChild(cardDiv);
+      });
+    }
+
+    // Tampilkan semua item saat halaman dimuat
+    renderItems(items);
+
+    // Tangkap event input pada input pencarian
+    keywordInput.addEventListener("input", function (event) {
+      var keyword = event.target.value.toLowerCase(); // Ambil nilai keyword dan ubah menjadi lowercase
+
+      var filteredItems = items.filter(function (item) {
+        return item[1].toLowerCase().includes(keyword); // Filter item berdasarkan keyword
+      });
+
+      renderItems(filteredItems); // Render ulang daftar barang berdasarkan hasil filter
+    });
+
+    // Tambahkan event pada tombol "Tambahkan ke Keranjang"
+    listBarang.addEventListener("click", function (event) {
+      if (event.target && event.target.matches("a.btn-primary")) {
+        // Periksa apakah yang diklik adalah tombol Tambahkan ke Keranjang
+        cartItemCount++; // Tambahkan 1 pada jumlah barang di keranjang
+        updateCartButton(); // Perbarui tampilan tombol keranjang
+      }
+    });
+
+    // Fungsi untuk memperbarui tampilan tombol keranjang
+    function updateCartButton() {
+      cartButton.innerHTML = `<i class="fas fa-shopping-cart"></i>(${cartItemCount})`;
+    }
+
+  </script>
+  </script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
