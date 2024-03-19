@@ -1,0 +1,33 @@
+TUGAS
+
+Aplikasi yang digunakan
+mysql workbench
+
+https://dev.mysql.com/downloads/workbench/
+
+alternative lainnya
+
+https //app.diagrams.net/
+
+ERD Challenge
+Kalian ditantang untuk membuat desain ERD dari sebuah aplikasi Review Film Berikut ini penjelasan tentang aplikasi tersebut
+
+Aplikasi Review Film
+Description:
+Sebuah Website Review Film seperti Metacritic/IMDB/Rotten Tomatoes dimana setiap user dapat memberi rating pada setiap film dan dapat melihat informasi tentang film tersebut
+
+Ketentuan Website Review Film:
+
+- Setiap user hanya dapat memliki satu profil
+- Setiap genre memiliki banyak film
+- Setiap user dapat memberikan Ulasan dalam setiap film, dan setiap film dapat diulas oleh banyak user (table pivot)
+- Setiap cast dapat memiliki peran dalam setiap film, dan film juga dapat memiliki banyak cast beserta perannya peran (table pivot)
+
+Requirement
+- Data di table profil : id, umur, bio, alamat
+- Data di table user: id, username, email, password
+- Data di table cast : id, nama, umur, bio
+- Data di table film : id, judul, rigkasan, tahun, poster
+- Data di table genre: id, nama
+
+Output dari Tugas hari ini yaitu gambar dari desain ERD (boleh berupa gambar PNG atau JPEG). Simpan gambar tersebut ke dalam repositori di Gitlab (dengan git push bukan upload manual di gitlab) lalu kirimkan link gitlab gambar tersebut ke tugas GC-INS

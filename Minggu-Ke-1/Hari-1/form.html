@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Form GC-INS</title>
+</head>
+<body>
+    <h1>Buat Account Baru!</h1>
+    <h2>Sign Up Form</h2>
+        <form action="welcome.html" method="post">
+            <label>First name:</label><br>
+            <input type="text"><br>
+            <label>Last name:</label><br>
+            <input type="text"><br>
+            <p>Gender: </p>
+                <input type="radio" value="Male">
+                <label>Male</label><br>
+                <input type="radio" value="Female">
+                <label>Female</label><br>
+                <input type="radio" value="Other">
+                <label>Other</label>
+            <p>Nationaly: </p>
+                <select name="Nationaly">
+                    <option value="Indonesia">Indonesia</option>
+                    <option value="Malaysia">Malaysia</option>
+                    <option value="German">German</option>
+                </select>
+            
+                <p> Language Spoken:</p>
+                    <input type="checkbox" value="Bahasa Indonesia">
+                    <label> Bahasa Indonesia</label><br>
+                    <input type="checkbox" id="Bahasa Indonesia" name="Bahasa Indonesia" value="Bahasa Indonesia">
+                    <label> Malaysia</label><br>
+                    <input type="checkbox" id="german" name="german" value="german">
+                    <label for="german"> German </label>
+
+                <p>Bio:</p>
+                <textarea name="bio" id="bio" cols="30" rows="10"></textarea><br>
+                <button type="submit" id="signup">Sign Up</button>
+
+        </form>
+</body>
+</html>
