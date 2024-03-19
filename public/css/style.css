@@ -1,0 +1,75 @@
+.header {
+    background: linear-gradient(135deg, #172a74, #21a9af);
+    background-color: #184e8e;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    font-size: 18px;
+    font-family: "Source Sans Pro", sans-serif;
+}
+
+.header .navbar {
+    weight: 100px;
+    background: transparent;
+    color: #fff;
+    border-radius: 9;
+    box-shadow: 1;
+    border: none;
+}
+
+.header .navbar .navbar-brand {
+    font-weight: bold;
+    font-size: 30px;
+    padding-left: 50px;
+    color: inherit;
+}
+
+.header .navbar .navbar-brand:hover {
+    color: #e5e5e5;
+}
+
+/* list */
+
+.header .navbar li {
+    padding-left: 20px;
+}
+
+.dropdown .dropdown-menu {
+    display: none;
+    transition: display 3s ease; /* Transisi 3 detik */
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* login */
+
+.header .navbar span .login {
+    color: #d9d9d9;
+
+    text-decoration: none;
+}
+
+.header .navbar span .login:hover {
+    color: #fff;
+}
+
+/* button sign */
+
+.header .action-button,
+.header .action-button:not(.disabled):active {
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 40px;
+    color: #ebeff1;
+    box-shadow: none;
+    text-shadow: none;
+    padding: 0.4rem 0.5rem;
+    background: transparent;
+    transition: background-color 0.3s;
+    outline: none;
+}
+
+.header .action-button:hover {
+    color: #d8e8ef;
+    text-color: black;
+}
